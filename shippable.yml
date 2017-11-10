@@ -2,6 +2,8 @@ language: none
 
 build:
   pre_ci:
+    - pwd
+    - ls -a
     - docker build -t="scriptnull/sample_node:pyt.$BUILD_NUMBER" .
     - echo "inside pre_ci"
   ci:
