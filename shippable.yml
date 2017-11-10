@@ -1,4 +1,16 @@
 language: none
 
-script:
-  - echo "hello"
+build:
+  pre_ci:
+    - docker build -t="scriptnull/sample_node:pyt.$BUILD_NUMBER" .
+    - echo "inside pre_ci"
+  ci:
+    - echo "inside ci"
+    - docker push scriptnull/sample_node:pyt.$BUILD_NUMBER
+    - printenv
+    - ls /build/IN/ci-params
+    
+integrations:                               
+  hub:
+    - integrationName: scriptnull-docker    #replace with your integration name   
+      type: dockerRegistryLogin  
