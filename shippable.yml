@@ -1,4 +1,7 @@
 language: none
 
+runtime:
+  nodePool: custom__x86_64__WindowsServer_2016
+
 script:
   - echo "hello"
