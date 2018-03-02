@@ -1,4 +1,7 @@
 language: none
 
+runtime:
+  nodePool: custom__x86_64__macOS_10_12
+
 script:
   - echo "hello"
